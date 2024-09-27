@@ -7,8 +7,8 @@ def perform_operation(num1, num2, operation):
         return num1 * num2
     elif operation == "divide":
         if num2 == 0:
-            return "Division by zero is undefined"
+            return "Error:  Division by zero is undefined"
         else:
             return num / num2
     else:
-        return "Invalid operation"
+        return "Error: Invalid operation"
