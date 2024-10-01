@@ -10,28 +10,27 @@ def convert_to_celsius(fahrenheit):
 def convert_to_fahrenheit(celsius):
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
-# Main function for user interaction
-def main():
-    try:
-        # Prompt user for temperature input
-        temp_input = input("Enter the temperature to convert: ")
-        temperature = float(temp_input)  # Attempt to convert input to a float
-        
-        # Prompt user for the temperature unit
-        unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
-        
-        if unit == 'F':
-            converted_temp = convert_to_celsius(temperature)
-            print(f"{temperature}°F is {converted_temp:.2f}°C")
-        elif unit == 'C':
-            converted_temp = convert_to_fahrenheit(temperature)
-            print(f"{temperature}°C is {converted_temp:.2f}°F")
-        else:
-            print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
-    
-    except ValueError:
-        print("Invalid temperature. Please enter a numeric value.")
+# User interaction starts here
+try:
+    # Prompt user for temperature input
+    temp_input = input("Enter the temperature to convert: ")
+    temperature = float(temp_input)  # Attempt to convert input to a float
 
-# Ensure the script runs the main function when executed
-if __name__ == "__main__":
-    main()
+    # Prompt user for the temperature unit
+    unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+
+    if unit == 'F':
+        # Convert from Fahrenheit to Celsius
+        converted_temp = convert_to_celsius(temperature)
+        print(f"{temperature}°F is {converted_temp:.2f}°C")
+    elif unit == 'C':
+        # Convert from Celsius to Fahrenheit
+        converted_temp = convert_to_fahrenheit(temperature)
+        print(f"{temperature}°C is {converted_temp:.2f}°F")
+    else:
+        # Invalid unit entered
+        print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+except ValueError:
+    # Handle non-numeric temperature input
+    print("Invalid temperature. Please enter a numeric value.")
+
