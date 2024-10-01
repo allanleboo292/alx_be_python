@@ -35,4 +35,3 @@ def main():
 # Ensure the script runs the main function when executed
 if __name__ == "__main__":
     main()
-
