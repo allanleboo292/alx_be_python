@@ -22,15 +22,15 @@ try:
     if unit == 'F':
         # Convert from Fahrenheit to Celsius
         converted_temp = convert_to_celsius(temperature)
-        print(f"{temperature}°F is {converted_temp:.2f}°C")
+        print(f"{temperature:.2f}°F is {converted_temp:.2f}°C")
     elif unit == 'C':
         # Convert from Celsius to Fahrenheit
         converted_temp = convert_to_fahrenheit(temperature)
-        print(f"{temperature}°C is {converted_temp:.2f}°F")
+        print(f"{temperature:.2f}°C is {converted_temp:.2f}°F")
     else:
         # Invalid unit entered
-        print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+        print(f"Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
 except ValueError:
     # Handle non-numeric temperature input
-    print("Invalid temperature. Please enter a numeric value.")
-
+    print(f"Invalid temperature. Please enter a numeric value.")
+`
