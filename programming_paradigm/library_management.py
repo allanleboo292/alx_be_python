@@ -28,7 +28,8 @@ class Library:
 
     def check_out_book(self, title):
         for book in self._books:
-            if book.title == title:if book.check_out():
+            if book.title == title:
+                if book.Check_out():
                     print(f"Checked out: {title}")
                 else:
                     print(f"Sorry, '{title}' is already checked out.")
